@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-6 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 text-gray-600 hover:text-primary-600 transition-colors;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 font-medium;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Calendar custom styles */
+.payment-calendar input[type="range"] {
+  @apply appearance-none h-2 bg-gray-200 rounded-full;
+}
+
+.payment-calendar input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-primary-600 rounded-full cursor-pointer transition-all hover:scale-110 hover:bg-primary-700;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-gray-300::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+.scrollbar-thumb-gray-300::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.scrollbar-thumb-gray-300::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+.dark .scrollbar-thumb-gray-600::-webkit-scrollbar-thumb {
+  @apply bg-gray-600;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100;
+}
+
+.card-header {
+  @apply p-6 border-b border-gray-100;
+}
+
+.card-body {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply p-6 border-t border-gray-100;
+}
+
+/* Form styles */
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.form-input {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+.form-select {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white;
+}
+
+.form-checkbox {
+  @apply h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+.btn-lg {
+  @apply px-6 py-3 text-lg;
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto border border-gray-200 rounded-lg;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+.table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+}
+
+.table tr {
+  @apply hover:bg-gray-50 transition-colors;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black bg-opacity-50 transition-opacity;
+}
+
+.modal-container {
+  @apply fixed inset-0 z-50 overflow-y-auto;
+}
+
+.modal-content {
+  @apply relative bg-white rounded-lg shadow-xl mx-auto my-8 max-w-lg w-full;
+}
+
+.modal-header {
+  @apply px-6 py-4 border-b border-gray-200;
+}
+
+.modal-body {
+  @apply px-6 py-4;
+}
+
+.modal-footer {
+  @apply px-6 py-4 border-t border-gray-200;
+}
+
+/* Alert styles */
+.alert {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.alert-info {
+  @apply bg-blue-50 text-blue-800 border border-blue-200;
+}
+
+.alert-success {
+  @apply bg-green-50 text-green-800 border border-green-200;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 text-yellow-800 border border-yellow-200;
+}
+
+.alert-error {
+  @apply bg-red-50 text-red-800 border border-red-200;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+  .text-sm { @apply text-xs; }
+}
+
+/* Dark Mode Transitions */
+.dark-mode-transition {
+  @apply transition-colors duration-200;
+}
